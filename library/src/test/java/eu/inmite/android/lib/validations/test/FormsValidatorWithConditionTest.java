@@ -28,7 +28,7 @@ import org.robolectric.annotation.Config;
 /**
  * @author Tomas Vondracek
  */
-@RunWith(RobolectricTestRunner.class)
+@RunWith(RobolectricGradleTestRunner.class)
 @Config(manifest=Config.NONE)
 public class FormsValidatorWithConditionTest {
 

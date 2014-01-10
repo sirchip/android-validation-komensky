@@ -1,0 +1,46 @@
+buildscript {
+    dependencies {
+        repositories {
+            mavenCentral()
+            mavenLocal()
+            maven {
+                url 'https://oss.sonatype.org/content/repositories/snapshots/'
+            }
+        }
+
+        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.squareup.gradle:gradle-android-test-plugin:0.9.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'android-library'
+apply plugin: 'android-test'
+
+dependencies {
+    repositories {
+        mavenCentral()
+    }
+
+    compile 'com.android.support:support-v4:18.0.+'
+    compile 'junit:junit:4.10'
+    compile 'org.robolectric:robolectric:2.1.+'
+    compile 'com.squareup:fest-android:1.0.+'
+    testCompile 'junit:junit:4.10'
+    testCompile 'org.robolectric:robolectric:2.1.+'
+    testCompile 'com.squareup:fest-android:1.0.+'
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.0.1'
+
+    sourceSets {
+        instrumentTest.setRoot('library/src/test')
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java{
+                srcDirs 'library/src/main/java'
+            }
+        }
+    }
+}

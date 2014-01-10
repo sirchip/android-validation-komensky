@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * @author Tomas Vondracek
  */
-@RunWith(RobolectricTestRunner.class)
+@RunWith(RobolectricGradleTestRunner.class)
 @Config(manifest=Config.NONE)
 public class CustomAdapterValidationTest {
 
